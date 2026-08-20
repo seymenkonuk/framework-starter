@@ -1,0 +1,32 @@
+{
+    "name": "seymenkonuk/framework-starter",
+    "description": "seymenkonuk/framework ile yeni PHP projeleri oluşturmak için hazırlanmış minimal proje şablonu.",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Recep Seymen Konuk",
+            "email": "konukrecepseymen@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {}
+    },
+    "require": {
+        "seymenkonuk/framework": "^2.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^11.5",
+        "phpstan/phpstan": "^2.2"
+    },
+    "scripts": {
+        "autoload": "composer dump-autoload --optimize --strict-psr --strict-ambiguous",
+        "test": "phpunit --testdox --colors=always",
+        "phpstan": "phpstan analyse",
+        "check": [
+            "@autoload",
+            "@phpstan",
+            "@test"
+        ]
+    }
+}
